@@ -9,7 +9,7 @@ Build mode: learn
 
 ## Slices
 
-- [ ] **1. A student can open Opportunity Compass and submit a complete profile**
+- [x] **1. A student can open Opportunity Compass and submit a complete profile**
       Becomes usable: A local browser app starts, shows the Opportunity Compass introduction, opens one focused profile form, validates the six profile areas, and displays a normalized profile summary after submission.
       Why now: It bootstraps the whole project while proving the first real journey and the data shape that every later matching slice consumes.
       PRD ref: `prd.md > The Core Journey` (steps 1-4); `prd.md > Features and Behavior > Profile and Goal`
