@@ -1,6 +1,9 @@
 import normalization from '../data/normalization.json' with { type: 'json' };
 
 const aliasEntries = Object.entries(normalization.aliases).map(([alias, tag]) => [clean(alias), tag]);
+const canonicalEntries = [...new Set(Object.values(normalization.aliases))]
+  .map((tag) => [clean(tag), tag]);
+const searchableEntries = [...aliasEntries, ...canonicalEntries];
 
 function clean(value) {
   return String(value ?? '')
@@ -19,7 +22,7 @@ function extractTags(values) {
   return [...new Set(values.flatMap((value) => {
     const cleaned = clean(value);
     const directTag = aliasEntries.find(([alias]) => alias === cleaned)?.[1];
-    const matchingTags = aliasEntries
+    const matchingTags = searchableEntries
       .filter(([alias]) => cleaned.includes(alias))
       .map(([, tag]) => tag);
     return directTag ? [directTag, ...matchingTags] : matchingTags;
