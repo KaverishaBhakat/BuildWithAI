@@ -1,0 +1,69 @@
+:root {
+  --ink: #17222b;
+  --muted: #60707a;
+  --paper: #f4f0e8;
+  --line: rgba(23, 34, 43, 0.14);
+  --accent: #d46f4d;
+  --accent-dark: #9e4835;
+  --display: "Instrument Serif", Georgia, serif;
+  --body: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+.is-hidden { display: none !important; }
+
+.app-shell { min-height: 100vh; }
+.landing-view { position: relative; min-height: 100vh; overflow: hidden; color: #fff; background: #1d8fb8; }
+.landing-art { position: absolute; inset: 0; background: radial-gradient(circle at 74% 18%, rgba(247, 194, 121, 0.9), transparent 25%), linear-gradient(135deg, #1d8fb8 0%, #2d9b98 42%, #e4985b 100%); }
+.landing-art::after { content: ""; position: absolute; inset: 34% 0 0; background: linear-gradient(160deg, transparent 8%, rgba(17, 72, 77, 0.58) 9% 23%, transparent 24%), linear-gradient(25deg, #114b58 0 16%, transparent 17% 30%, rgba(36, 111, 111, 0.9) 31% 48%, transparent 49%); opacity: .82; }
+.landing-copy { position: relative; z-index: 1; width: min(600px, calc(100% - 48px)); padding: clamp(72px, 15vh, 148px) 0 180px clamp(24px, 7vw, 110px); }
+.eyebrow { margin: 0 0 22px; color: currentColor; font-size: 0.78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
+h1, h2 { margin: 0; font-family: var(--display); font-weight: 400; letter-spacing: .01em; }
+h1 { max-width: 9ch; font-size: clamp(4rem, 8vw, 7.2rem); line-height: .9; }
+h2 { font-size: clamp(3rem, 6vw, 5.8rem); line-height: .94; }
+.lede { max-width: 38rem; margin: 30px 0 34px; color: rgba(255,255,255,.86); font-size: 1.03rem; line-height: 1.65; }
+.primary-button, .secondary-button { border: 0; border-radius: 5px; padding: 14px 22px; font-weight: 600; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
+.primary-button { color: #fff; background: var(--accent); box-shadow: 0 10px 24px rgba(72, 30, 14, .18); }
+.primary-button:hover { background: #e07f5d; transform: translateY(-2px); }
+.secondary-button { color: var(--ink); background: rgba(255,255,255,.55); border: 1px solid var(--line); }
+.landing-footer { position: absolute; right: 0; bottom: 0; left: 0; z-index: 1; display: flex; align-items: center; gap: 12px; padding: 22px clamp(24px, 7vw, 110px); color: rgba(255,255,255,.84); background: rgba(24, 43, 48, .34); backdrop-filter: blur(22px); font-size: .86rem; }
+.footer-mark { font-family: var(--display); font-size: 2rem; line-height: .5; }
+.form-view, .summary-view { width: min(900px, calc(100% - 48px)); margin: 0 auto; padding: clamp(48px, 9vw, 110px) 0; }
+.form-intro { max-width: 700px; margin-bottom: 42px; }
+.form-intro p:last-child { color: var(--muted); line-height: 1.7; }
+#profile-form { display: grid; gap: 22px; max-width: 720px; }
+label { display: grid; gap: 9px; }
+label span { font-size: .87rem; font-weight: 700; }
+label small { color: var(--muted); font-size: .75rem; }
+input, textarea, select { width: 100%; border: 1px solid var(--line); border-radius: 4px; padding: 15px 16px; color: var(--ink); background: rgba(255,255,255,.64); outline: none; }
+input:focus, textarea:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(212,111,77,.14); }
+textarea { resize: vertical; }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.form-error { min-height: 1.25rem; margin: 0; color: var(--accent-dark); font-size: .84rem; }
+.summary-view { max-width: 760px; }
+.summary-view > p { color: var(--accent-dark); }
+.summary-card { margin: 34px 0 24px; padding: 28px; border: 1px solid var(--line); background: rgba(255,255,255,.58); box-shadow: 0 20px 60px rgba(23,34,43,.06); }
+.summary-card dl { display: grid; grid-template-columns: 150px 1fr; gap: 14px 24px; margin: 0; }
+.summary-card dt { color: var(--muted); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.summary-card dd { margin: 0; line-height: 1.55; }
+
+@media (max-width: 640px) {
+  h1 { font-size: clamp(3.5rem, 16vw, 5rem); }
+  h2 { font-size: clamp(2.8rem, 13vw, 4rem); }
+  .landing-copy { width: calc(100% - 40px); padding-left: 20px; padding-right: 20px; }
+  .landing-footer { padding: 18px 20px; }
+  .form-view, .summary-view { width: calc(100% - 40px); }
+  .form-grid, .summary-card dl { grid-template-columns: 1fr; }
+}

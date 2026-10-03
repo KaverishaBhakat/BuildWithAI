@@ -1,0 +1,31 @@
+{
+  "aliases": {
+    "js": "javascript",
+    "javascript": "javascript",
+    "reactjs": "react",
+    "react.js": "react",
+    "react native": "react-native",
+    "node": "node.js",
+    "nodejs": "node.js",
+    "ts": "typescript",
+    "typescript": "typescript",
+    "html5": "html",
+    "css3": "css",
+    "rest api": "rest-apis",
+    "rest apis": "rest-apis",
+    "sql/nosql": "databases"
+  },
+  "roleTags": {
+    "frontend": ["frontend", "front end", "front-end", "web development"],
+    "fullstack": ["fullstack", "full stack"],
+    "software-development": ["software development", "software engineer", "programming"],
+    "mobile": ["mobile", "react native", "ios", "android"],
+    "web": ["web", "web development"]
+  },
+  "domainParents": {
+    "frontend": ["software-development", "web"],
+    "fullstack": ["software-development", "web"],
+    "mobile": ["software-development"],
+    "web": ["software-development"]
+  }
+}

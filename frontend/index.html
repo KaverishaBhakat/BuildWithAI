@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opportunity Compass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="landing-view" id="landing-view" aria-labelledby="landing-title">
+        <div class="landing-art" aria-hidden="true"></div>
+        <div class="landing-copy">
+          <p class="eyebrow">Opportunity Compass</p>
+          <h1 id="landing-title">Find the opportunity that fits your next chapter.</h1>
+          <p class="lede">Discover internships that connect to your skills and goals, understand why they match, and leave with one practical next step.</p>
+          <button class="primary-button" id="start-button" type="button">Build my profile</button>
+        </div>
+        <footer class="landing-footer">
+          <span class="footer-mark">*</span>
+          <span>Clearer direction for the work you want to do.</span>
+        </footer>
+      </section>
+
+      <section class="form-view is-hidden" id="form-view" aria-labelledby="form-title">
+        <div class="form-intro">
+          <p class="eyebrow">Start with where you are</p>
+          <h2 id="form-title">Tell us what you are building toward.</h2>
+          <p>One focused profile is enough to begin. Your answers stay local to this demo.</p>
+        </div>
+        <form id="profile-form" novalidate>
+          <label>
+            <span>Skills</span>
+            <input name="skills" placeholder="React, JavaScript, Node.js" required />
+            <small>Separate skills with commas.</small>
+          </label>
+          <label>
+            <span>Projects and descriptions</span>
+            <textarea name="projects" rows="4" placeholder="Portfolio site: built with React and responsive CSS" required></textarea>
+            <small>One project per line. Use a colon between the title and description.</small>
+          </label>
+          <div class="form-grid">
+            <label>
+              <span>Experience level</span>
+              <select name="experienceLevel" required>
+                <option value="">Choose one</option>
+                <option value="student">Student</option>
+                <option value="entry-level">Entry-level</option>
+                <option value="junior">Junior</option>
+                <option value="mid">Mid-level</option>
+              </select>
+            </label>
+            <label>
+              <span>Remote preference</span>
+              <select name="remotePreference" required>
+                <option value="">Choose one</option>
+                <option value="remote">Remote</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="onsite">On-site</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            <span>Areas of interest</span>
+            <input name="interests" placeholder="Frontend, AI, developer tools" required />
+          </label>
+          <label>
+            <span>Desired internship role</span>
+            <input name="desiredRole" placeholder="Frontend or full-stack development" required />
+          </label>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <button class="primary-button" type="submit">Understand my profile</button>
+        </form>
+      </section>
+
+      <section class="summary-view is-hidden" id="summary-view" aria-live="polite">
+        <p class="eyebrow">Profile understood</p>
+        <h2>Your starting point is clear.</h2>
+        <div class="summary-card" id="summary-card"></div>
+        <button class="secondary-button" id="edit-button" type="button">Edit profile</button>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
